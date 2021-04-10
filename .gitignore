@@ -1,0 +1,14 @@
+#IDE Settings folders
+.vscode/
+.idea/
+.settings/
+
+#package manager exclusions
+node_modules/
+
+#env exclusions
+.env
+*.env.*
+# Allow the .env.example
+!.env.example
+

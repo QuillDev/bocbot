@@ -1,6 +1,6 @@
 import { QuillEvent } from "../QuillLib/abstract/QuillEvent";
 
-export default class Ready extends QuillEvent {
+export default class ReadyEvent extends QuillEvent {
     // This should only run once.
     once = true;
 
@@ -9,7 +9,7 @@ export default class Ready extends QuillEvent {
     }
     
     async execute(): Promise<void> {
-        console.log("Test!");
+        console.log(`Bot ready! Logged in as user ${this.client.user?.username}`);
     }
 
 }

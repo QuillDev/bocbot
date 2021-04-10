@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { QuillCommand } from "src/QuillLib/abstract/QuillCommand";
+import { QuillCommand } from "../QuillLib/abstract/QuillCommand";
 
 export default class Hello extends QuillCommand {
     get keyword(): string {
@@ -8,5 +8,4 @@ export default class Hello extends QuillCommand {
     async run(msg: Message, _args: string[]): Promise<void> {
         await msg.channel.send("Hello!");
     }
-
 }

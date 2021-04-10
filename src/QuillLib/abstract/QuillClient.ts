@@ -9,7 +9,7 @@ import { QuillEvent } from "./QuillEvent";
 
 class QuillClient extends Client {
 
-    private commands: Map<string, QuillCommand> = new Map<string, QuillCommand>();
+    public commands: Map<string, QuillCommand> = new Map<string, QuillCommand>();
 
     constructor(opts: ClientOptions) {
         super(opts);
@@ -32,7 +32,7 @@ class QuillClient extends Client {
         const files = await fg(["src/commands/*.ts", "src/commands/*/*.ts"], { onlyFiles: true });
         for (const file of files) {
             const relPath = file.split("src/commands/")[1];
-            const module = await import("../commands/" + relPath);
+            const module = await import("../../commands/" + relPath);
 
             const command: QuillCommand = new module.default(this);
             this.commands.set(command.keyword, command);
@@ -50,7 +50,7 @@ class QuillClient extends Client {
             const relPath = file.split("src/events/")[1];
             // Import the module & create the event
             const module = await import("../../events/" + relPath);
-            const event:QuillEvent = new module.default();
+            const event:QuillEvent = new module.default(this);
 
             // Register the event on the client
             if (event.once) {

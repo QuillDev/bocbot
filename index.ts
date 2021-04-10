@@ -1,4 +1,4 @@
-import QuillClient from "./src/QuillLib/abstract/QuillClient";
+import QuillClient from "./src/abstract/QuillClient";
 require("dotenv").config();
 
 new QuillClient({})

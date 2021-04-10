@@ -1,4 +1,4 @@
-import { QuillEvent } from "../QuillLib/abstract/QuillEvent";
+import { QuillEvent } from "../abstract/QuillEvent";
 
 export default class ReadyEvent extends QuillEvent {
     // This should only run once.

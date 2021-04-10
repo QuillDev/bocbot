@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { QuillEvent } from "../QuillLib/abstract/QuillEvent";
+import { QuillEvent } from "../abstract/QuillEvent";
 
 export default class MessageEvent extends QuillEvent {
     get name(): string {

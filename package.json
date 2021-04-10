@@ -16,6 +16,8 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
-    "fast-glob": "^3.2.5"
+    "fast-glob": "^3.2.5",
+    "got": "^11.8.2",
+    "linkedom": "^0.7.1"
   }
 }

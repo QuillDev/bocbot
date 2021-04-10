@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { QuillCommand } from "../QuillLib/abstract/QuillCommand";
+import { QuillCommand } from "../abstract/QuillCommand";
 
 export default class Hello extends QuillCommand {
     get keyword(): string {

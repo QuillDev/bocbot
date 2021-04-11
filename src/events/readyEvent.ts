@@ -1,4 +1,4 @@
-import { setPresence } from "src/helper/presence/setPresence";
+import { setPresence } from "../helper/presence/setPresence";
 import { QuillEvent } from "../abstract/QuillEvent";
 
 export default class ReadyEvent extends QuillEvent {

@@ -9,6 +9,7 @@ export const sendEmbed = async (msg: Message, embedOptions: MessageEmbedOptions)
         new MessageEmbed({
             timestamp: Date.now(),
             author: { name: "BOCBot" },
+            footer: { text: `Requested by ${msg.author.username}`, iconURL: msg.author.displayAvatarURL() },
             ...embedOptions
         })
     );

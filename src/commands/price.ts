@@ -22,7 +22,7 @@ export default class Price extends QuillCommand {
         await getCryptoPrice(args[0])
             .then(async ({ iconURL, priceString, ticker }) => {
 
-                let img = `https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/${this.map.get(ticker) || ""}.png`
+                let img = `https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/${this.map.get(ticker.toUpperCase()) || ""}.png`
                 await sendRawEmbed(msg,
                     new MessageEmbed()
                         .setAuthor("Market Price", iconURL || "")

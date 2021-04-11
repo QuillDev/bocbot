@@ -3,8 +3,8 @@ import { sendEmbed } from "../helper/EmbedHelper";
 import { QuillCommand } from "../abstract/QuillCommand";
 
 export default class Help extends QuillCommand {
-    get keyword(): string {
-        return "help";
+    get keyword(): string[] {
+        return ["help"];
     }
     async run(msg: Message, _args: string[]): Promise<void> {
         await sendEmbed(msg, {

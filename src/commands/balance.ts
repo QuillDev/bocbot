@@ -5,9 +5,10 @@ import { sendEmbed } from "../helper/EmbedHelper";
 import { getCryptoPrice } from "../helper/crypto/getCryptoPrice";
 
 export default class Balance extends QuillCommand {
-    get keyword(): string {
-        return "balance";
+    get keyword(): string[] {
+        return ["balance", "gains"];
     }
+
     async run(msg: Message, args: string[]): Promise<any> {
 
         const [balance, btcPrice, ethPrice] = await Promise.all([getBalance(), getCryptoPrice(), getCryptoPrice("ETH")]);

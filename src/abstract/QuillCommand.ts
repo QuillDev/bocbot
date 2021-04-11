@@ -10,6 +10,6 @@ export abstract class QuillCommand {
     }
 
     // Name out abstract methods
-    abstract get keyword(): string;
+    abstract get keyword(): string[];
     abstract run(msg: Message, args: string[]): Promise<any>;
 }

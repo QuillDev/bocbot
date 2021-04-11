@@ -1,4 +1,4 @@
-import { Client, Message, MessageEmbed } from "discord.js";
+import { Message, MessageEmbed } from "discord.js";
 import { QuillCommand } from "../abstract/QuillCommand";
 import { sendErrorEmbed, sendRawEmbed } from "../helper/EmbedHelper";
 import { getCryptoPrice } from "../helper/crypto/getCryptoPrice";
@@ -15,9 +15,10 @@ export default class Price extends QuillCommand {
         this.map.set("DOGE", 74);
 
     }
-    get keyword(): string {
-        return "price";
+    get keyword(): string[] {
+        return ["price"];
     }
+
     async run(msg: Message, args: string[]): Promise<any> {
         await getCryptoPrice(args[0])
             .then(async ({ iconURL, priceString, ticker }) => {

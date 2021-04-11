@@ -35,7 +35,10 @@ class QuillClient extends Client {
             const module = await import("../commands/" + relPath);
 
             const command: QuillCommand = new module.default(this);
-            this.commands.set(command.keyword, command);
+            for(const keyword of command.keyword){
+                this.commands.set(keyword, command);
+            }
+            
 
             console.log(`[Command Loader] Registered ${command.keyword}`);
         }

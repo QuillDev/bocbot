@@ -10,7 +10,7 @@ export default class Price extends QuillCommand {
     constructor(client: QuillClient) {
         super(client);
         this.map.set("BTC", 1);
-        this.map.set("ETC", 1027);
+        this.map.set("ETH", 1027);
         this.map.set("BNB", 1839);
         this.map.set("DOGE", 74);
 

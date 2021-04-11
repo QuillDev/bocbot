@@ -1,16 +1,13 @@
 import { setPresence } from "src/helper/presence/setPresence";
 import { QuillEvent } from "../abstract/QuillEvent";
 
-export default class ReadyEvent extends QuillEvent {
-    // This should only run once.
-    once = true;
+export default class ShardResumeEvent extends QuillEvent {
 
     get name(): string {
         return "ready";
     }
     
     async execute(): Promise<void> {
-        console.log(`Bot ready! Logged in as user ${this.client.user?.username}`);
         setPresence(this.client);
     }
 
